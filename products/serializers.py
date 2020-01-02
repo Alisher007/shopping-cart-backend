@@ -22,6 +22,7 @@ class ProductSerializer(serializers.ModelSerializer):
             'description',
             'price',
             'available',
+            'quantity',
             'stock',
         ]
         read_only_fields = ['pk']
