@@ -26,7 +26,7 @@ SECRET_KEY = '-w3voc#^jc=^@(+1$zls#i#^90^j6=$*am*m7$xrwa!iml%2&r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['shoppingcart-django-redux.herokuapp.com']
 
 
 # Application definition
