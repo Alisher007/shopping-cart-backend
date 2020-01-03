@@ -1,1 +1,3 @@
-# django-shopvuex
+# django-backend
+
+django
