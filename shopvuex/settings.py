@@ -160,7 +160,3 @@ SIMPLE_JWT = {
 }
 
 django_heroku.settings(local())
-
-if 'DATABASE_URL' in os.environ:
-    import dj_database_url
-    DATABASES = {'default': dj_database_url.config()}
