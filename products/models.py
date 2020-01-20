@@ -24,8 +24,10 @@ class Product(models.Model):
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     name = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=100, db_index=True)
+    img = models.CharField(max_length=500)
     description = models.TextField(blank=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.IntegerField()
+    discount = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)
     stock = models.PositiveIntegerField()
     quantity = models.PositiveIntegerField(default=0)
@@ -35,6 +37,9 @@ class Product(models.Model):
     class Meta:
         ordering = ('name', )
         index_together = (('id', 'slug'),)
+
+    def getDiscount(self):
+        return self.price * ((100 - self.discount) / 100)
 
     def __str__(self):
         return self.name
